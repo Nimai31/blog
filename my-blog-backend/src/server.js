@@ -2,6 +2,7 @@ import fs from "fs";
 import admin from "firebase-admin";
 import express from "express";
 import { db, connectToDb } from "./db.js";
+import cors from "cors";
 
 const credentials = JSON.parse(fs.readFileSync("./credentials.json"));
 admin.initializeApp({
@@ -9,6 +10,13 @@ admin.initializeApp({
 });
 
 const app = express();
+app.use(
+  cors({
+    origin: ["https://deploy-mern-1whq.vercel.app"],
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.use(async (req, res, next) => {
