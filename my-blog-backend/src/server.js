@@ -116,6 +116,36 @@ app.delete("/api/articles/:name/comments", async (req, res) => {
   }
 });
 
+app.put("/api/articles/:name/comments", async (req, res) => {
+  const { name } = req.params;
+  const { text, updatedText } = req.body;
+  const { email } = req.user;
+
+  const article = await db.collection("articles").findOne({ name });
+
+  if (article) {
+    const comment = article.comments.find(
+      (c) => c.postedBy === email && c.text === text
+    );
+
+    if (comment) {
+      await db
+        .collection("articles")
+        .updateOne(
+          { name, "comments.postedBy": email, "comments.text": text },
+          { $set: { "comments.$.text": updatedText } }
+        );
+
+      const updatedArticle = await db.collection("articles").findOne({ name });
+      res.json(updatedArticle);
+    } else {
+      res.status(404).send("Comment not found");
+    }
+  } else {
+    res.send("That article doesn't exist!");
+  }
+});
+
 connectToDb(() => {
   console.log("Successfully connected to database!");
   app.listen(8000, () => {
