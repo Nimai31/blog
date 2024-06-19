@@ -2,7 +2,6 @@ import fs from "fs";
 import admin from "firebase-admin";
 import express from "express";
 import { db, connectToDb } from "./db.js";
-import cors from "cors";
 
 const credentials = JSON.parse(fs.readFileSync("./credentials.json"));
 admin.initializeApp({
