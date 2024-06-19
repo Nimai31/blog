@@ -97,6 +97,25 @@ app.post("/api/articles/:name/comments", async (req, res) => {
   }
 });
 
+app.delete("/api/articles/:name/comments", async (req, res) => {
+  const { name } = req.params;
+  const { text } = req.body;
+  const { email } = req.user;
+
+  const article = await db.collection("articles").findOne({ name });
+
+  if (article) {
+    await db
+      .collection("articles")
+      .updateOne({ name }, { $pull: { comments: { postedBy: email, text } } });
+
+    const updatedArticle = await db.collection("articles").findOne({ name });
+    res.json(updatedArticle);
+  } else {
+    res.send("That article doesn't exist!");
+  }
+});
+
 connectToDb(() => {
   console.log("Successfully connected to database!");
   app.listen(8000, () => {

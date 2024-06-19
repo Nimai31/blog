@@ -3,7 +3,6 @@ import axios from "axios";
 import useUser from "../hooks/useUser";
 
 const AddCommentForm = ({ articleName, onArticleUpdated }) => {
-  const [name, setName] = useState("");
   const [commentText, setCommentText] = useState("");
   const { user } = useUser();
 
@@ -13,7 +12,6 @@ const AddCommentForm = ({ articleName, onArticleUpdated }) => {
     const response = await axios.post(
       `/api/articles/${articleName}/comments`,
       {
-        postedBy: name,
         text: commentText,
       },
       {
@@ -22,7 +20,6 @@ const AddCommentForm = ({ articleName, onArticleUpdated }) => {
     );
     const updatedArticle = response.data;
     onArticleUpdated(updatedArticle);
-    setName("");
     setCommentText("");
   };
 

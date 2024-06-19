@@ -29,7 +29,7 @@ const ArticlePage = () => {
       setArticleInfo(newArticleInfo);
     };
 
-    if (isLoading) {
+    if (!isLoading) {
       loadArticleInfo();
     }
   }, [isLoading, user]);
@@ -76,7 +76,11 @@ const ArticlePage = () => {
       ) : (
         <button>Log in to add a comment</button>
       )}
-      <CommentsList comments={articleInfo.comments} />
+      <CommentsList
+        comments={articleInfo.comments}
+        articleName={articleId}
+        onArticleUpdated={(updatedArticle) => setArticleInfo(updatedArticle)}
+      />
     </>
   );
 };
