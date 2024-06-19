@@ -1,29 +1,28 @@
 const HomePage = () => (
   <>
-    <h1>Hello, welcome to my blog!</h1>
+    <h1>Hello, welcome to our blog!</h1>
     <p>
-      Welcome to my blog! Proin congue ligula id risus posuere, vel eleifend ex
-      egestas. Sed in turpis leo. Aliquam malesuada in massa tincidunt egestas.
-      Nam consectetur varius turpis, non porta arcu porttitor non. In tincidunt
-      vulputate nulla quis egestas. Ut eleifend ut ipsum non fringilla. Praesent
-      imperdiet nulla nec est luctus, at sodales purus euismod.
+      Welcome to our blog! We are Polepalli Nimai Charan and N Gowri Viswanath,
+      currently studying at MS Ramaiah Institute of Technology. This blog is a
+      space where we share our thoughts, experiences, and knowledge on various
+      topics.
     </p>
     <p>
-      Donec vel mauris lectus. Etiam nec lectus urna. Sed sodales ultrices
-      dapibus. Nam blandit tristique risus, eget accumsan nisl interdum eu.
-      Aenean ac accumsan nisi. Nunc vel pulvinar diam. Nam eleifend egestas
-      viverra. Donec finibus lectus sed lorem ultricies, eget ornare leo luctus.
-      Morbi vehicula, nulla eu tempor interdum, nibh elit congue tellus, ac
-      vulputate urna lorem nec nisi. Morbi id consequat quam. Vivamus accumsan
-      dui in facilisis aliquet.,
+      At MS Ramaiah Institute of Technology, we are constantly exploring new
+      ideas and technologies. Through this blog, we aim to document our journey
+      and provide valuable insights into the world of technology, education, and
+      beyond.
     </p>
     <p>
-      Etiam nec lectus urna. Sed sodales ultrices dapibus. Nam blandit tristique
-      risus, eget accumsan nisl interdum eu. Aenean ac accumsan nisi. Nunc vel
-      pulvinar diam. Nam eleifend egestas viverra. Donec finibus lectus sed
-      lorem ultricies, eget ornare leo luctus. Morbi vehicula, nulla eu tempor
-      interdum, nibh elit congue tellus, ac vulputate urna lorem nec nisi. Morbi
-      id consequat quam. Vivamus accumsan dui in facilisis aliquet.,
+      Whether you are a fellow student, a tech enthusiast, or simply someone
+      curious about our experiences, we hope you find our posts informative and
+      engaging. We cover a wide range of topics, from the latest trends in
+      technology to personal growth and academic tips.
+    </p>
+    <p>
+      Feel free to explore, comment, and share your thoughts with us. We believe
+      in the power of community and collaboration, and we are excited to connect
+      with like-minded individuals through this platform.
     </p>
   </>
 );
